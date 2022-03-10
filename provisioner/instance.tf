@@ -85,8 +85,9 @@ resource "aws_instance" "ansible_server" {
 }
 
 output "PrivateIP" { 
-    value = "http://"+"${aws_instance.ansible_server.private_ip}"+"/"
+    value = "${aws_instance.ansible_server.private_ip}"
 }
+
 output "PublicIP" {
-    value = "http://"+"${aws_instance.ansible_server.public_ip}"+"/"
+    value = "${aws_instance.ansible_server.public_ip}"
 }
